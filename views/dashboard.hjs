@@ -2,8 +2,12 @@
 <html>
   <head>
     <title>Runmonitor Dashboard</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
 	<script src="/libraries/require.min.js" data-main="/javascripts/dashboard.main.client.js"></script>
+
+    
 
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
@@ -11,7 +15,11 @@
     <h1>Runmonitor Dashboard</h1>
     <p>Welcome to the dashboard</p>
     <ol data-bind="foreach:activities">
-    	<li><span data-bind="text:start"></span>: <span data-bind="text:duration"></span> min</li>
+    	<li><span data-bind="text:start"></span>: <span data-bind="text:duration"></span> min - week: <span data-bind="text:week"></span></li>
     </ol>
+
+
+    <div class="ct-chart ct-perfect-fourth"></div>
+
   </body>
 </html>
