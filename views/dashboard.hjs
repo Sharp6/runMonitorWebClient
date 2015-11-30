@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Runmonitor Dashboard</title>
+
+	<script src="/libraries/require.min.js" data-main="/javascripts/dashboard.main.client.js"></script>
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Runmonitor Dashboard</h1>
+    <p>Welcome to the dashboard</p>
+    <ol data-bind="foreach:activities">
+    	<li><span data-bind="text:start"></span>: <span data-bind="text:duration"></span> min</li>
+    </ol>
+  </body>
+</html>
