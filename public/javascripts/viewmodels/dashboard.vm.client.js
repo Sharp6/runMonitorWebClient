@@ -11,11 +11,26 @@ define(['knockout', 'underscore', 'models/activity.model.client'], function(ko, 
 			yearGrouped = yearGrouped.map(function(yearGroup) {
 				return _.groupBy(yearGroup, function(activity) { return activity.week() });
 			});
-			console.log(yearGrouped);
+			//console.log(yearGrouped);
 			
 			return yearGrouped;
-
 		});
+
+		self.durationDataset = ko.computed(function() {
+			var dataset = self.activities().map(function(activity) {
+				return activity.duration();
+			});
+			console.log(dataset);
+			return dataset;
+		});
+
+		self.labels = ko.computed(function() {
+			labels = Array();
+			for(i=0; i<self.activities().length;i++){
+				labels[i] = i;
+			}
+			return labels;
+		})
 
 		self.loadActivities = function() {
 			da.getActivities()

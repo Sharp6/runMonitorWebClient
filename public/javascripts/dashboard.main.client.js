@@ -24,10 +24,12 @@ require(["knockout", "viewmodels/dashboard.vm.client", "da/activity.da.client"],
 
 	var data = {
 	  // A labels array that can contain any sort of values
-	  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+	  //labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+	  labels: dashboardVM.labels(),
 	  // Our series array that contains series objects or in this case series data arrays
 	  series: [
-	    [5, 2, 4, 2, 0]
+	    dashboardVM.durationDataset()
+	    //[63,49,47,63,49,47,63,49,47,63,49,47,63,49,47,63,49,47,63,49,47,63,49,47]
 	  ]
 	};
 
